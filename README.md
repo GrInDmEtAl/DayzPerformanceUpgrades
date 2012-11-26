@@ -18,6 +18,8 @@ So if you are brave enough to test some code from here, please tell me in the Op
 
 [http://opendayz.net/index.php?threads/a-better-queued-login-process-for-dayz.1052/](http://opendayz.net/index.php?threads/a-better-queued-login-process-for-dayz.1052/)    
 
+If enough people have testing this stuff succesfully, i will request a related pull to the community build, hopfull that it is available with the next community build for everybody.
+
 Thanks.   
 
 Below you will find some code enhancements and a short "how to use".
