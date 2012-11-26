@@ -1,3 +1,4 @@
+// currently not tested much
 "dayzSetFuel"			addPublicVariableEventHandler {(_this select 1) call local_sefFuel};
 "dayzSetFix"			addPublicVariableEventHandler {(_this select 1) call object_setFixServer};
 "dayzVehicleInit"		addPublicVariableEventHandler {(_this select 1) call fnc_vehicleEventHandler};
