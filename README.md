@@ -38,6 +38,11 @@ In your `server_functions.sqf` file insert the following code lines below this `
 		};
 	};
 
+The only problem currently observed is the following:
+Because you can now very fast relogin, it is possible that you meet the alerted Zombies from last login, looking stupid around and seems to wait for new order :D
+They will disapear past a few seconds then.
+
+
 ## Reworked server cleanup state machine   
 Better priority ordering, faster object update execution.  
 
