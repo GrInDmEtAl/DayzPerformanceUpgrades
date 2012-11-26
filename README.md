@@ -1,4 +1,4 @@
-# Performance improvements for DAYZ#
+# Performance improvements for DayZ#
 
 This repository will focus on performance related improvements for DayZ
 
@@ -18,13 +18,29 @@ So if you are brave enough to test some code from here, please tell me in the Op
 
 [http://opendayz.net/index.php?threads/a-better-queued-login-process-for-dayz.1052/](http://opendayz.net/index.php?threads/a-better-queued-login-process-for-dayz.1052/)    
 
-
 Thanks.   
 
+Below you will find some code enhancements and a short "how to use".
 
-**Reworked server cleanup fsm**
+## Instant Login for everybody, every time!!!   
+Do you think it is a joke? It isn't, try it out!
 
-replace your server_cleanup.fsm with the file from here:
+Login much accelerated, because of minimizing slow running overhead from MPFramework.   
+Unload server simultaneous, by avoiding the serverside processing of commands like rSay e.t.c..    
+
+In your `server_functions.sqf` file insert the following code lines below this `waituntil {!isnil "bis_fnc_init"};` :    
+
+	BIS_MPF_remoteExecutionServer = {
+		if ((_this select 1) select 2 == "JIPrequest") then {
+			[nil,(_this select 1) select 0,"loc",rJIPEXEC,[any,any,"per","execVM","ca\Modules\Functions\init.sqf"]] call RE;
+		};
+	};
+
+## Reworked server cleanup state machine   
+Better priority ordering, faster object update execution.  
+
+
+Replace your `server_cleanup.fsm` with the file from here:
 
 
 [https://github.com/fred41/DayzPerformanceUpgrades/blob/master/server_cleanup/server_cleanup.fsm](https://github.com/fred41/DayzPerformanceUpgrades/blob/master/server_cleanup/server_cleanup.fsm)
@@ -32,5 +48,3 @@ replace your server_cleanup.fsm with the file from here:
 
 
 Thanks for testing this and let me know your results :)
-
-
