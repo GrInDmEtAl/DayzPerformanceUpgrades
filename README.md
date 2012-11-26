@@ -22,7 +22,7 @@ Thanks.
 
 Below you will find some code enhancements and a short "how to use".
 
-## Instant Login for everybody, every time!!!   
+## Instant Login always and for everybody !!!   
 Do you think it is a joke? It isn't, try it out!
 
 Login much accelerated, because of minimizing slow running overhead from MPFramework.   
