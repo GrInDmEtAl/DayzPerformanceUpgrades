@@ -45,11 +45,11 @@ They will disapear past a few seconds then.
 
 **If you have issues on long running servers ( uptime > 4 hours ) with many players, try the experimental public eventhandler defines too:**
 
-copy the file `publicEH.sqf` from here:
+Copy the file `publicEH.sqf` from here ...
 
 [https://github.com/fred41/DayzPerformanceUpgrades/blob/master/publicEH_experimental/publicEH.sqf](https://github.com/fred41/DayzPerformanceUpgrades/blob/master/publicEH_experimental/publicEH.sqf) 
 
-In your misson directory and edit `init.sqf` as follows:
+... in your misson directory and edit `init.sqf` as follows:
 
 	//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";
 	call compile preprocessFileLineNumbers "publicEH.sqf";
