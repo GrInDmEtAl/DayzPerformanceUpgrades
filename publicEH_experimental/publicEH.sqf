@@ -2,9 +2,6 @@
 "dayzSetFuel"			addPublicVariableEventHandler {(_this select 1) call local_sefFuel};
 "dayzSetFix"			addPublicVariableEventHandler {(_this select 1) call object_setFixServer};
 "dayzVehicleInit"		addPublicVariableEventHandler {(_this select 1) call fnc_vehicleEventHandler};
-"dayzHit"			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageHandler};
-"dayzHitV"			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageVehicle};
-
 
 if (isServer) then {
 	"dayzDeath"		addPublicVariableEventHandler {(_this select 1) call server_playerDied};
@@ -35,6 +32,9 @@ if (!isDedicated) then {
 	"dayzHideBody"		addPublicVariableEventHandler {hideBody (_this select 1)};
 	"dayzGutBody"		addPublicVariableEventHandler {(_this select 1) spawn local_gutObject};
 	"dayzHumanity"		addPublicVariableEventHandler {(_this select 1) spawn player_humanityChange};
+	"dayzHit"			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageHandler};
+	"dayzHitV"			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageVehicle};
+
 
 	"dayzSetDate"		addPublicVariableEventHandler {setDate (_this select 1)};
 	"dayzFlies"		addPublicVariableEventHandler {(_this select 1) call spawn_flies};
