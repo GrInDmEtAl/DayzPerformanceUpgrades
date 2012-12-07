@@ -1,8 +1,20 @@
-// currently not tested much
 "dayzSetFuel"			addPublicVariableEventHandler {(_this select 1) call local_sefFuel};
 "dayzSetFix"			addPublicVariableEventHandler {(_this select 1) call object_setFixServer};
 "dayzVehicleInit"		addPublicVariableEventHandler {(_this select 1) call fnc_vehicleEventHandler};
 "dayzGutBody"			addPublicVariableEventHandler {(_this select 1) spawn local_gutObject};
+"norrnRaLW"   		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\load_wounded.sqf"};
+"norrnRLact"		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\load\load_wounded.sqf"};
+"norrnRDead"   		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\deadState.sqf"};
+"usecBleed"		addPublicVariableEventHandler {_id = (_this select 1) spawn fnc_usec_damageBleed};
+"usecBandage"		addPublicVariableEventHandler {(_this select 1) call player_medBandage};
+"usecEpi"		addPublicVariableEventHandler {(_this select 1) call player_medEpi};
+"usecTransfuse"		addPublicVariableEventHandler {(_this select 1) call player_medTransfuse};
+"usecMorphine"		addPublicVariableEventHandler {(_this select 1) call player_medMorphine};
+"usecPainK"		addPublicVariableEventHandler {(_this select 1) call player_medPainkiller};
+"dayzHideBody"		addPublicVariableEventHandler {hideBody (_this select 1)};
+"dayzHumanity"		addPublicVariableEventHandler {(_this select 1) spawn player_humanityChange};
+"dayzHitV"		addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageVehicle};
+
 
 if (isServer) then {
 	"dayzDeath"		addPublicVariableEventHandler {(_this select 1) call server_playerDied};
@@ -21,20 +33,6 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
-	"norrnRaLW"   		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\load_wounded.sqf"};
-	"norrnRLact"		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\load\load_wounded.sqf"};
-	"norrnRDead"   		addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\deadState.sqf"};
-	"usecBleed"		addPublicVariableEventHandler {_id = (_this select 1) spawn fnc_usec_damageBleed};
-	"usecBandage"		addPublicVariableEventHandler {(_this select 1) call player_medBandage};
-	"usecEpi"		addPublicVariableEventHandler {(_this select 1) call player_medEpi};
-	"usecTransfuse"		addPublicVariableEventHandler {(_this select 1) call player_medTransfuse};
-	"usecMorphine"		addPublicVariableEventHandler {(_this select 1) call player_medMorphine};
-	"usecPainK"		addPublicVariableEventHandler {(_this select 1) call player_medPainkiller};
-	"dayzHideBody"		addPublicVariableEventHandler {hideBody (_this select 1)};
-	"dayzHumanity"		addPublicVariableEventHandler {(_this select 1) spawn player_humanityChange};
-	"dayzHitV"		addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageVehicle};
-
-
 	"dayzSetDate"		addPublicVariableEventHandler {setDate (_this select 1)};
 	"dayzFlies"		addPublicVariableEventHandler {(_this select 1) call spawn_flies};
 	"dayzRoadFlare"		addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};
